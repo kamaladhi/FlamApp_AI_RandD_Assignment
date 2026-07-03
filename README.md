@@ -20,7 +20,7 @@ Alternatively, here is the final equation in LaTeX format that can be copied dir
 \left(t*\cos(0.5236)-e^{0.03\left|t\right|}\cdot\sin(0.3t)\sin(0.5236)+55, 42+t*\sin(0.5236)+e^{0.03\left|t\right|}\cdot\sin(0.3t)\cos(0.5236)\right)
 ```
 
----
+
 
 ## 📁 2. Repository Structure
 
@@ -35,7 +35,7 @@ Alternatively, here is the final equation in LaTeX format that can be copied dir
  ┗ 📜 requirements.txt     # Python dependencies
 ```
 
----
+
 
 ## 🧠 3. Engineering Approach & Mathematical Intuition
 
