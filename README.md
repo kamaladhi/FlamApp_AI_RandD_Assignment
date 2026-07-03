@@ -22,17 +22,16 @@ The final equation in LaTeX format that can be copied directly to the Desmos cal
 
 ## 📁 2. Repository Structure
 
+```text
 📦 FlamApp_AI_RandD_Assignment
  ┣ 📂 Dataset
  ┃ ┗ 📜 xy_data.csv        # The original point-cloud dataset (t is unknown)
-
- ┣ 📂plots
-
- ┃ ┗ 🖼️ visual_proof.png      # Matplotlib output proving the curve fit
+ ┣ 📂 plots
+ ┃ ┗ 🖼️ visual_proof.png   # Matplotlib output proving the curve fit
  ┣ 📜 README.md            # Mathematical proofs and exact final variables
  ┣ 📜 solve.py             # Analytical OOP solver and visualization script
-
- ┗📜 requirements.txt     # Python dependencies
+ ┗ 📜 requirements.txt     # Python dependencies
+```
 
 ---
 
