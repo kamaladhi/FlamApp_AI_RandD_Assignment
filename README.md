@@ -12,7 +12,9 @@ The precise values for the unknown variables are:
 
 ### Desmos Format
 
-The final equation in LaTeX format that can be copied directly to the Desmos calculator:
+You can view the interactive plot directly here: **[Desmos Interactive Graph](https://www.desmos.com/calculator/uf0bpeinbd)** *(Note: The parameter bounds are set to $6 \le t \le 60$)*.
+
+Alternatively, here is the final equation in LaTeX format that can be copied directly to the Desmos calculator:
 
 ```latex
 \left(t*\cos(0.5236)-e^{0.03\left|t\right|}\cdot\sin(0.3t)\sin(0.5236)+55, 42+t*\sin(0.5236)+e^{0.03\left|t\right|}\cdot\sin(0.3t)\cos(0.5236)\right)
@@ -88,5 +90,13 @@ To verify that the mathematical model perfectly fits the raw data, the script in
 2. Run the solver:
    `python solve.py`
 3. The script will output the exact parameters to the console and automatically generate a `visual_proof.png` image. This image plots the exact mathematical curve over the original point cloud, visually proving the correctness of the analytical rotation model.
+
+
+## 📚 5. References
+
+- **Optimization Algorithm:** Storn, R., & Price, K. (1997). *Differential Evolution – A Simple and Efficient Heuristic for global Optimization over Continuous Spaces*. Journal of Global Optimization, 11(4), 341-359.
+- **Library Documentation:** SciPy v1.11.0 Reference Guide, `scipy.optimize.differential_evolution`. Available at: <https://docs.scipy.org/doc/scipy/reference/generated/scipy.optimize.differential_evolution.html>
+- **Geometric Transformations:** Derived using standard 2D Cartesian rotation matrices and linear algebra principles.
+
 
 ---
