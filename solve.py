@@ -1,5 +1,6 @@
 import numpy as np
 import pandas as pd
+import os
 import matplotlib.pyplot as plt
 from scipy.optimize import differential_evolution
 import logging
@@ -81,6 +82,49 @@ class ParametricCurveFitter:
         else:
             logging.error("Optimization failed to converge.")
             return {}
+    def plot_results(self):
+        """
+        Generates a visual proof of the mathematical model by plotting the raw data 
+        against the predicted parametric curve.
+        """
+        if not self.optimal_params:
+            logging.warning("Please run optimization before plotting.")
+            return
+            
+        theta = np.radians(self.optimal_params['theta_deg'])
+        X = self.optimal_params['X']
+        M = self.optimal_params['M']
+        
+        # Generate the predicted curve smoothly
+        t_vals = np.linspace(6, 60, 1000)
+        x_pred = t_vals * np.cos(theta) - np.exp(M * np.abs(t_vals)) * np.sin(0.3 * t_vals) * np.sin(theta) + X
+        y_pred = 42 + t_vals * np.sin(theta) + np.exp(M * np.abs(t_vals)) * np.sin(0.3 * t_vals) * np.cos(theta)
+
+        # Plotting styling (Standard Academic / Matplotlib Default)
+        plt.figure(figsize=(10, 6))
+        
+        # Use standard blue dots and a solid red line for a more traditional look
+        plt.scatter(self.x, self.y, color='blue', alpha=0.5, label='Original Data (xy_data.csv)', s=15)
+        plt.plot(x_pred, y_pred, color='red', linewidth=2, label='Predicted Parametric Curve')
+        
+        plt.title('Parametric Curve Fitting via Inverse Rotation')
+        plt.xlabel('X coordinate')
+        plt.ylabel('Y coordinate')
+        plt.legend()
+        plt.grid(True, linestyle='--', alpha=0.7)
+        
+        # Save output and show interactively
+        output_dir = 'plots'
+        os.makedirs(output_dir, exist_ok=True)
+        output_file = f'{output_dir}/visual_proof.png'
+        plt.savefig(output_file, dpi=300, bbox_inches='tight')
+        logging.info(f"Saved standard visualization as '{output_file}'.")
+        print(f"\n[!] Success: Visual proof saved to {output_file}")
+        
+        # Display the interactive plot window
+        plt.show()
+
+
 
     
 
