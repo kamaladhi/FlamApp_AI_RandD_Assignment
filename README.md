@@ -12,7 +12,7 @@ The precise values for the unknown variables are:
 
 ### Desmos Format
 
-As required in the PDF, here is the final equation in LaTeX format that can be copied directly to the Desmos calculator:
+The final equation in LaTeX format that can be copied directly to the Desmos calculator:
 
 ```latex
 \left(t*\cos(0.5236)-e^{0.03\left|t\right|}\cdot\sin(0.3t)\sin(0.5236)+55, 42+t*\sin(0.5236)+e^{0.03\left|t\right|}\cdot\sin(0.3t)\cos(0.5236)\right)
